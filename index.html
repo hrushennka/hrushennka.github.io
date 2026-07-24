@@ -247,21 +247,21 @@
     animation:fadeInUp 0.6s ease forwards;
   }
 
-  .project-card::before{
-    content:'';
-    position:absolute;
-    top:0;
-    left:0;
-    width:1.5px;
-    height:100%;
-    background:var(--accent-gradient);
-    opacity:0;
-    transition:opacity .3s ease;
-    border-radius:var(--radius) 0 0 var(--radius);
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    background: var(--accent-gradient);
+    opacity: 0;
+    transition: opacity .4s ease;
+    border-radius: var(--radius);
+    z-index: -1;
+    filter: blur(8px);
   }
 
   .project-card:hover::before {
-    opacity: 0.9; 
+    opacity: 0.03;
   }
 
   .project-card:hover{
