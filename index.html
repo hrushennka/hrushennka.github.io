@@ -239,7 +239,7 @@
     background:linear-gradient(160deg, var(--bg-raised-2), var(--bg-raised));
   }
 
-  .project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+  .project-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:12px;}
 
   .project-card h3{font-size:19px;margin-bottom:4px;}
   .project-meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);}
@@ -265,6 +265,31 @@
     background:var(--accent-soft);
     color:var(--accent);
   }
+
+  /* ---- ссылки на макет / репозиторий внутри карточки проекта ---- */
+  .project-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:18px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+
+  .link-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    padding:7px 13px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+    transition:border-color .15s ease, color .15s ease, transform .15s ease;
+  }
+  .link-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);}
+  .link-btn svg{width:13px;height:13px;flex-shrink:0;}
 
   .projects-note{
     margin-top:28px;
@@ -396,21 +421,30 @@
   </div>
 
   <div class="projects-grid">
-<!-- 
+
     <div class="project-card">
       <div class="project-top">
         <div>
           <h3>Stay Focused</h3>
           <div class="project-meta">ООО «Натлекс Лаб» · фев–май 2025</div>
         </div>
-        <span class="badge">репозиторий приватный</span>
       </div>
-      <p>Мобильное приложение для развития самоконтроля и концентрации у людей с СДВГ. UI-компоненты и интеграция с backend на React Native, роль менеджера команды, тест-кейсы на Jest.</p>
+      <p>Мобильное приложение для развития самоконтроля и концентрации у людей с СДВГ. Макеты интерфейса, UI-компоненты и интеграция с backend на React Native, роль менеджера команды.</p>
       <div class="tags">
         <span class="tag">React Native</span>
         <span class="tag">Express</span>
         <span class="tag">PostgreSQL</span>
         <span class="tag">Figma</span>
+      </div>
+      <div class="project-links">
+        <a class="link-btn" href="https://www.figma.com/design/Kg1jhYwhwkm5JJupMZr6Ka/ADHD-app?node-id=103-4893&t=dCWnM0i7HEIUILia-1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+          Макет в Figma
+        </a>
+        <a class="link-btn" href="https://github.com/Mooncat3/ADHD-Support-App" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+          GitHub
+        </a>
       </div>
     </div>
 
@@ -434,19 +468,25 @@
     <div class="project-card">
       <div class="project-top">
         <div>
-          <h3>ForestRobotTwin</h3>
-          <div class="project-meta">Дипломный проект · 2025–2026</div>
+          <h3>Лендинг Villajärvi</h3>
+          <div class="project-meta">Лендинг коттеджного посёлка</div>
         </div>
-        <span class="badge">репозиторий приватный</span>
+        <span class="badge">репозиторий отсутствует</span>
       </div>
-      <p>Веб-интерфейс на React и серверное API на FastAPI для платформы моделирования и анализа поведения агентов в лесной среде. Интеграция через REST и WebSocket.</p>
+      <p>Лендинг для коттеджного посёлка Villajärvi — вёрстка на Bootstrap, без бэкенда. Также разработала логотип посёлка.</p>
       <div class="tags">
-        <span class="tag">React</span>
-        <span class="tag">FastAPI</span>
-        <span class="tag">WebSocket</span>
-        <span class="tag">Docker</span>
+        <span class="tag">Bootstrap</span>
+        <span class="tag">HTML / CSS</span>
+        <span class="tag">Figma</span>
+        <span class="tag">Логотип</span>
       </div>
-    </div> -->
+      <div class="project-links">
+        <a class="link-btn" href="https://www.figma.com/design/h5hwpTHUX0ksy9heqVXiUX/%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3---%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%BD%D1%8B%D0%B9-%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%BE%D0%BA?node-id=0-1&t=8AA4QjK19Va1LdQn-1" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+          Макет в Figma
+        </a>
+      </div>
+    </div>
 
     <div class="project-card signature">
       <div class="project-top">
@@ -454,7 +494,6 @@
           <h3>Discord Bot · панель управления</h3>
           <div class="project-meta">Учебный проект · 2024</div>
         </div>
-        <span class="badge">репозиторий приватный</span>
       </div>
       <p>Интерфейс для управления сообщениями, участниками и модерацией канала.</p>
       <div class="tags">
@@ -462,13 +501,23 @@
         <span class="tag">Express</span>
         <span class="tag">Discord API</span>
       </div>
+      <div class="project-links">
+        <a class="link-btn" href="https://docs.google.com/presentation/d/1ou2CO9eBF0QK0w1vsDk8-0mO6FAzeercmSuo7rC0W2o/edit?usp=sharing" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
+          Презентация с макетами Lunacy
+        </a>
+        <a class="link-btn" href="https://github.com/hrushennka/gundou-project" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
+          GitHub
+        </a>
+      </div>
     </div>
 
   </div>
 
   <div class="projects-note">
     <span class="mono" style="color:var(--accent);">i</span>
-    <span>Репозитории находятся в приватном доступе.</span>
+    <span>Часть репозиториев в приватном доступе.</span>
   </div>
 </section>
 
@@ -529,7 +578,6 @@
   }
   size();
 
-  // ---- Sprite textures drawn on canvas, so points render as round glows / 4-point sparkles instead of flat squares ----
   function makeGlowTexture(){
     var c = document.createElement('canvas');
     c.width = c.height = 64;
@@ -554,7 +602,6 @@
     grad.addColorStop(1,'rgba(255,255,255,0)');
     ctx.fillStyle = grad;
     ctx.fillRect(-32,-32,64,64);
-    // four-point star spike
     ctx.strokeStyle = 'rgba(255,255,255,0.95)';
     ctx.lineWidth = 1.6;
     ctx.beginPath();
@@ -588,11 +635,8 @@
     return new THREE.Points(geo, mat);
   }
 
-  // основная масса — мягкие круглые звёзды
   var stars  = makeField(1200, 400, 0xffffff, 1.4, glowTex);
-  // часть — заметные "звёздочки" со спайками
   var sparkles = makeField(70, 380, 0xffffff, 4.2, sparkleTex);
-  // розовая пыль — тоже круглая, не квадратная
   var dust   = makeField(160, 250, 0xFA5CAB, 2.2, glowTex);
 
   scene.add(stars, sparkles, dust);
