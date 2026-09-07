@@ -15,14 +15,16 @@
     }
 
     :root {
-      --bg-base: #0B0B0F;
-      --bg-raised: #13131A;
-      --bg-raised-2: #1A1A24;
-      --accent: #C084B5;
-      --accent-soft: rgba(192, 132, 181, 0.15);
-      --text: #EDEDF5;
-      --muted: #8888A0;
-      --line: rgba(237, 237, 245, 0.06);
+      --bg-base: #0D0D14;
+      --bg-raised: #17161F;
+      --bg-raised-2: #201F2C;
+      --accent: #FF4FA3;
+      --accent-2: #7C5CFF;
+      --accent-soft: rgba(255, 79, 163, 0.16);
+      --accent-2-soft: rgba(124, 92, 255, 0.16);
+      --text: #F5F5FF;
+      --muted: #ACACC7;
+      --line: rgba(245, 245, 255, 0.09);
       --radius: 8px;
     }
 
@@ -155,7 +157,12 @@
       color: var(--accent);
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      opacity: 0.8;
+      opacity: 0.95;
+    }
+
+    .skill-col:nth-child(2) h3,
+    .skill-col:nth-child(2) li::before {
+      color: var(--accent-2);
     }
 
     .skill-col ul {
@@ -188,7 +195,8 @@
     }
 
     .project-card:hover {
-      border-color: rgba(192, 132, 181, 0.4);
+      border-color: rgba(255, 79, 163, 0.5);
+      box-shadow: 0 0 0 1px rgba(255, 79, 163, 0.12), 0 12px 32px rgba(255, 79, 163, 0.12);
       transform: translateY(-2px);
     }
 
