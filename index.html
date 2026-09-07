@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Проекты</title>
+  <title>Визитка · разработчик</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -15,17 +15,17 @@
     }
 
     :root {
-      --bg-base: #0D0D14;
-      --bg-raised: #17161F;
-      --bg-raised-2: #201F2C;
-      --accent: #FF4FA3;
-      --accent-2: #7C5CFF;
-      --accent-soft: rgba(255, 79, 163, 0.16);
-      --accent-2-soft: rgba(124, 92, 255, 0.16);
-      --text: #F5F5FF;
-      --muted: #ACACC7;
-      --line: rgba(245, 245, 255, 0.09);
-      --radius: 8px;
+      --bg: #F7F7FC;
+      --surface: #FFFFFF;
+      --surface-2: #F0F0F5;
+      --border: #E4E4ED;
+      --text: #1A1A24;
+      --text-muted: #5E5E72;
+      --text-light: #8E8EA3;
+      --accent: #3B3B5C;
+      --accent-soft: rgba(59, 59, 92, 0.08);
+      --radius: 10px;
+      --shadow: 0 4px 16px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
     }
 
     html {
@@ -33,9 +33,9 @@
     }
 
     body {
-      background: var(--bg-base);
+      background: var(--bg);
       color: var(--text);
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -55,114 +55,92 @@
       font-weight: 400;
     }
 
-    /* ----- навигация ----- */
+    /* ---------- навигация ---------- */
     .nav {
-      padding: 20px 8vw 18px;
-      border-bottom: 1px solid var(--line);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 32px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 16px;
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-brand {
       font-weight: 500;
       font-size: 16px;
       color: var(--text);
-      letter-spacing: -0.02em;
     }
-
     .nav-brand span {
       color: var(--accent);
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 28px;
       flex-wrap: wrap;
     }
 
     .nav-link {
       font-size: 14px;
       font-weight: 400;
-      color: var(--muted);
-      position: relative;
-      transition: color 0.25s ease;
+      color: var(--text-muted);
+      transition: color 0.2s ease;
       padding: 4px 0;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 0;
-      height: 1.5px;
-      background: var(--accent);
-      transition: width 0.3s ease;
+      border-bottom: 1.5px solid transparent;
     }
 
     .nav-link:hover {
       color: var(--text);
     }
 
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
     .nav-link.active {
       color: var(--text);
+      border-bottom-color: var(--accent);
     }
 
-    .nav-link.active::after {
-      width: 100%;
-    }
-
-    /* ----- sections ----- */
+    /* ---------- общие блоки ---------- */
     section {
-      padding: 64px 8vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 56px 32px;
     }
 
     .section-head {
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
-
     .section-head h2 {
-      font-size: clamp(20px, 2.2vw, 28px);
+      font-size: 20px;
       font-weight: 500;
       color: var(--text);
+      letter-spacing: -0.02em;
     }
 
-    /* ----- skills ----- */
+    /* ---------- стек ---------- */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+      background: var(--border);
       border-radius: var(--radius);
       overflow: hidden;
+      box-shadow: var(--shadow);
     }
 
     .skill-col {
-      background: var(--bg-raised);
+      background: var(--surface);
       padding: 28px 24px;
     }
 
     .skill-col h3 {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 500;
-      margin-bottom: 14px;
-      color: var(--accent);
-      letter-spacing: 0.04em;
       text-transform: uppercase;
-      opacity: 0.95;
-    }
-
-    .skill-col:nth-child(2) h3,
-    .skill-col:nth-child(2) li::before {
-      color: var(--accent-2);
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
     .skill-col ul {
@@ -170,16 +148,16 @@
     }
     .skill-col li {
       font-size: 14px;
-      color: var(--muted);
-      padding: 3px 0;
+      color: var(--text);
+      padding: 4px 0;
       font-weight: 400;
     }
     .skill-col li::before {
-      content: '· ';
-      color: var(--accent);
+      content: '— ';
+      color: var(--text-light);
     }
 
-    /* ----- projects ----- */
+    /* ---------- проекты ---------- */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -187,46 +165,48 @@
     }
 
     .project-card {
-      background: var(--bg-raised);
-      border: 1px solid var(--line);
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 28px;
-      transition: border-color 0.3s ease, transform 0.25s ease;
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     .project-card:hover {
-      border-color: rgba(255, 79, 163, 0.5);
-      box-shadow: 0 0 0 1px rgba(255, 79, 163, 0.12), 0 12px 32px rgba(255, 79, 163, 0.12);
-      transform: translateY(-2px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.04);
     }
 
     .project-card h3 {
       font-size: 18px;
       font-weight: 500;
       margin-bottom: 2px;
+      color: var(--text);
     }
 
     .project-meta {
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--text-light);
       font-weight: 400;
     }
 
     .badge {
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      padding: 3px 10px;
+      padding: 2px 10px;
       border-radius: 4px;
-      border: 1px solid var(--line);
-      color: var(--muted);
+      background: var(--surface-2);
+      color: var(--text-muted);
       display: inline-block;
       margin-top: 4px;
       font-weight: 400;
+      border: 1px solid var(--border);
     }
 
     .project-card p {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
       margin: 12px 0 16px;
       line-height: 1.7;
@@ -245,8 +225,8 @@
       border-radius: 4px;
       background: var(--accent-soft);
       color: var(--accent);
-      border: 1px solid rgba(192, 132, 181, 0.15);
       font-weight: 400;
+      border: 1px solid transparent;
     }
 
     .project-links {
@@ -255,7 +235,7 @@
       gap: 8px;
       margin-top: 14px;
       padding-top: 14px;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--border);
     }
 
     .link-btn {
@@ -264,16 +244,16 @@
       gap: 6px;
       padding: 4px 12px;
       border-radius: 4px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--border);
       font-family: 'JetBrains Mono', monospace;
       font-size: 11px;
-      color: var(--muted);
+      color: var(--text-muted);
       transition: 0.2s ease;
       font-weight: 400;
     }
     .link-btn:hover {
       border-color: var(--accent);
-      color: var(--accent);
+      color: var(--text);
     }
     .link-btn svg {
       width: 12px;
@@ -283,48 +263,50 @@
     .projects-note {
       margin-top: 20px;
       font-size: 13px;
-      color: var(--muted);
+      color: var(--text-light);
       display: flex;
       gap: 8px;
       align-items: center;
     }
 
-    /* ----- education ----- */
+    /* ---------- образование ---------- */
     .edu-row {
       display: flex;
       justify-content: space-between;
       padding: 16px 0;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--border);
       flex-wrap: wrap;
       gap: 6px;
     }
     .edu-row:first-child {
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--border);
     }
     .edu-row .edu-what {
       font-size: 15px;
       font-weight: 400;
+      color: var(--text);
     }
     .edu-row .edu-where {
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
     }
     .edu-row .edu-when {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--muted);
+      color: var(--text-light);
       font-size: 13px;
       font-weight: 400;
     }
 
-    /* ----- contact ----- */
+    /* ---------- контакты ---------- */
     .contact {
       text-align: center;
-      padding: 72px 8vw;
+      padding: 72px 32px;
+      border-top: 1px solid var(--border);
     }
     .contact h2 {
-      font-size: clamp(24px, 3vw, 36px);
+      font-size: 26px;
       font-weight: 500;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
     .contact-links {
       display: flex;
@@ -335,58 +317,62 @@
 
     .btn {
       display: inline-block;
-      padding: 10px 24px;
+      padding: 10px 28px;
       border-radius: 6px;
       font-size: 14px;
       font-weight: 500;
       font-family: 'Inter', sans-serif;
-      transition: 0.25s ease;
+      transition: 0.2s ease;
     }
 
     .btn-primary {
       background: var(--accent);
-      color: #0B0B0F;
+      color: #fff;
       border: none;
     }
     .btn-primary:hover {
-      opacity: 0.85;
+      background: #2A2A44;
       transform: translateY(-1px);
     }
 
     .btn-ghost {
-      border: 1px solid var(--line);
-      color: var(--muted);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      background: var(--surface);
     }
     .btn-ghost:hover {
       border-color: var(--accent);
-      color: var(--accent);
+      color: var(--text);
+      background: var(--surface);
     }
 
-    /* ----- footer ----- */
+    /* ---------- футер ---------- */
     footer {
-      border-top: 1px solid var(--line);
-      padding: 20px 8vw;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-top: 1px solid var(--border);
+      padding: 20px 32px;
       display: flex;
       justify-content: space-between;
       font-size: 12px;
-      color: var(--muted);
+      color: var(--text-light);
       font-family: 'JetBrains Mono', monospace;
       flex-wrap: wrap;
       gap: 8px;
       font-weight: 400;
     }
 
-    /* ----- responsive ----- */
+    /* ---------- адаптив ---------- */
     @media (max-width: 820px) {
       .skills-grid,
       .projects-grid {
         grid-template-columns: 1fr;
       }
       section {
-        padding: 48px 6vw;
+        padding: 40px 20px;
       }
       .nav {
-        padding: 16px 6vw;
+        padding: 16px 20px;
         flex-direction: column;
         align-items: flex-start;
       }
@@ -397,8 +383,8 @@
       .project-card {
         padding: 20px;
       }
-      .section-head {
-        margin-bottom: 28px;
+      .contact {
+        padding: 48px 20px;
       }
     }
   </style>
@@ -407,7 +393,7 @@
 
   <!-- ===== НАВИГАЦИЯ ===== -->
   <nav class="nav">
-    <div class="nav-brand"></div>
+    <div class="nav-brand">✦ <span>Алина</span></div>
     <div class="nav-links">
       <a class="nav-link active" href="#skills">Стек</a>
       <a class="nav-link" href="#projects">Проекты</a>
@@ -416,7 +402,7 @@
     </div>
   </nav>
 
-  <!-- ===== SKILLS ===== -->
+  <!-- ===== СТЕК ===== -->
   <section id="skills">
     <div class="section-head">
       <h2>Стек</h2>
@@ -428,7 +414,7 @@
           <li>React, React Native</li>
           <li>HTML / CSS</li>
           <li>JavaScript / TypeScript</li>
-          <li>Адаптивная и кроссбраузерная вёрстка</li>
+          <li>Адаптивная вёрстка</li>
         </ul>
       </div>
       <div class="skill-col">
@@ -451,7 +437,7 @@
     </div>
   </section>
 
-  <!-- ===== PROJECTS ===== -->
+  <!-- ===== ПРОЕКТЫ ===== -->
   <section id="projects">
     <div class="section-head">
       <h2>Проекты</h2>
@@ -472,7 +458,7 @@
         <div class="project-links">
           <a class="link-btn" href="https://www.figma.com/design/Kg1jhYwhwkm5JJupMZr6Ka/ADHD-app?node-id=103-4893&t=dCWnM0i7HEIUILia-1" target="_blank">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
-            Макет в Figma
+            Макет
           </a>
           <a class="link-btn" href="https://github.com/Mooncat3/ADHD-Support-App" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
@@ -507,7 +493,7 @@
         <div class="project-links">
           <a class="link-btn" href="https://www.figma.com/design/h5hwpTHUX0ksy9heqVXiUX/%D0%9B%D0%B5%D0%BD%D0%B4%D0%B8%D0%BD%D0%B3---%D0%BA%D0%BE%D1%82%D1%82%D0%B5%D0%B4%D0%B6%D0%BD%D1%8B%D0%B9-%D0%BF%D0%BE%D1%81%D0%B5%D0%BB%D0%BE%D0%BA?node-id=0-1&t=8AA4QjK19Va1LdQn-1" target="_blank">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
-            Макет в Figma
+            Макет
           </a>
           <a class="link-btn" href="https://landing-villajarvi.vercel.app/" target="_blank">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
@@ -528,7 +514,7 @@
         <div class="project-links">
           <a class="link-btn" href="https://docs.google.com/presentation/d/1ou2CO9eBF0QK0w1vsDk8-0mO6FAzeercmSuo7rC0W2o/edit?usp=sharing" target="_blank">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h5"/></svg>
-            Презентация с макетами Lunacy
+            Презентация
           </a>
           <a class="link-btn" href="https://github.com/hrushennka/gundou-project" target="_blank">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.72-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.49-1.11-1.49-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.57 2.34 1.12 2.91.86.09-.66.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2Z"/></svg>
@@ -540,12 +526,12 @@
     </div>
 
     <div class="projects-note">
-      <span class="mono" style="color:var(--accent);">i</span>
+      <span class="mono" style="color:var(--text-muted);">⏺</span>
       <span>Часть репозиториев в приватном доступе.</span>
     </div>
   </section>
 
-  <!-- ===== EDUCATION ===== -->
+  <!-- ===== ОБРАЗОВАНИЕ ===== -->
   <section id="education">
     <div class="section-head">
       <h2>Образование</h2>
@@ -566,7 +552,7 @@
     </div>
   </section>
 
-  <!-- ===== CONTACT ===== -->
+  <!-- ===== КОНТАКТЫ ===== -->
   <section id="contact" class="contact">
     <h2>Контакты</h2>
     <div class="contact-links">
@@ -575,7 +561,7 @@
     </div>
   </section>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- ===== ФУТЕР ===== -->
   <footer>
     <span>© 2026</span>
     <span>github.com/hrushennka</span>
