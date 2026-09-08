@@ -38,6 +38,7 @@
       font-family: 'Inter', -apple-system, sans-serif;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      font-size: 16px;
     }
 
     a {
@@ -361,29 +362,175 @@
       font-weight: 400;
     }
 
-    /* ---------- адаптив ---------- */
+    /* ---------- АДАПТИВ: МОБИЛЬНЫЕ УСТРОЙСТВА ---------- */
     @media (max-width: 820px) {
+      body {
+        font-size: 15px;
+      }
+
       .skills-grid,
       .projects-grid {
         grid-template-columns: 1fr;
       }
+
       section {
         padding: 40px 20px;
       }
+
       .nav {
         padding: 16px 20px;
         flex-direction: column;
         align-items: flex-start;
       }
+
       .nav-links {
         width: 100%;
-        gap: 16px;
+        gap: 20px;
       }
+
+      .nav-link {
+        font-size: 16px;
+        padding: 6px 0;
+      }
+
       .project-card {
         padding: 20px;
       }
+
+      .project-card h3 {
+        font-size: 20px;
+      }
+
+      .project-card p {
+        font-size: 15px;
+      }
+
+      .project-meta {
+        font-size: 13px;
+      }
+
+      .tag {
+        font-size: 12px;
+        padding: 4px 14px;
+      }
+
+      .link-btn {
+        font-size: 12px;
+        padding: 6px 14px;
+      }
+
+      .skill-col {
+        padding: 24px 20px;
+      }
+
+      .skill-col li {
+        font-size: 15px;
+        padding: 6px 0;
+      }
+
+      .skill-col h3 {
+        font-size: 14px;
+      }
+
       .contact {
         padding: 48px 20px;
+      }
+
+      .contact h2 {
+        font-size: 24px;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 12px 24px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .edu-row {
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .edu-row .edu-what {
+        font-size: 16px;
+      }
+
+      .edu-row .edu-where {
+        font-size: 15px;
+      }
+
+      .projects-note {
+        font-size: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 13px;
+        padding: 16px 20px;
+      }
+
+      .section-head h2 {
+        font-size: 22px;
+      }
+    }
+
+    /* ---------- ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ ---------- */
+    @media (max-width: 420px) {
+      body {
+        font-size: 14px;
+      }
+
+      section {
+        padding: 28px 16px;
+      }
+
+      .nav {
+        padding: 12px 16px;
+      }
+
+      .nav-link {
+        font-size: 14px;
+      }
+
+      .project-card {
+        padding: 16px;
+      }
+
+      .project-card h3 {
+        font-size: 18px;
+      }
+
+      .project-card p {
+        font-size: 14px;
+      }
+
+      .skill-col {
+        padding: 18px 16px;
+      }
+
+      .skill-col li {
+        font-size: 14px;
+      }
+
+      .contact h2 {
+        font-size: 20px;
+      }
+
+      .btn {
+        font-size: 14px;
+        padding: 10px 20px;
       }
     }
   </style>
@@ -528,27 +675,6 @@
       <span>Часть репозиториев в приватном доступе.</span>
     </div>
   </section>
-
-  
-  <!-- <section id="education">
-    <div class="section-head">
-      <h2>Образование</h2>
-    </div>
-    <div class="edu-row">
-      <div>
-        <div class="edu-what">Бакалавр, «Информационные системы и технологии»</div>
-        <div class="edu-where">ПетрГУ, Институт математики и информационных технологий</div>
-      </div>
-      <div class="edu-when">выпуск 2026</div>
-    </div>
-    <div class="edu-row">
-      <div>
-        <div class="edu-what">RuCode.Старт, RuCode.Финал, ICPC</div>
-        <div class="edu-where">Участница чемпионатов по программированию</div>
-      </div>
-      <div class="edu-when">2024</div>
-    </div>
-  </section> -->
 
   <!-- ===== КОНТАКТЫ ===== -->
   <section id="contact" class="contact">
